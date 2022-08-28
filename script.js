@@ -19,7 +19,7 @@ function keyType(key, randomWord, x){
 				}
 				else{
 					wordElement.textContent = "";
-					document.querySelector("style + div + div").textContent = parseInt(document.querySelector("style + div + div").textContent) + 1 || 1
+					document.querySelector("div:first-child + div").textContent = parseInt(document.querySelector("div:first-child + div").textContent) + 1 || 1
 					const resultingWordElement = document.createElement("p");
 					countLetters(word).reduce((accumulator, currentValue) => {
 						if(!randomWord.includes(currentValue)){
@@ -46,7 +46,7 @@ function keyType(key, randomWord, x){
 						document.querySelectorAll("div p:last-child span:not(.fading)").forEach(el => el.classList.add("fading"))
 						document.querySelector("div p:last-child").style.background = "none";
 					}
-					document.querySelector("style + div").insertBefore(resultingWordElement, wordElement);
+					document.querySelector("div:first-child").insertBefore(resultingWordElement, wordElement);
 				}
 			}
 			else{
